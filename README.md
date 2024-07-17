@@ -1,8 +1,8 @@
 # CEMEX Angular Tech Test
 ## Initial Setup
-- First, run the command npm i in the folder where the package.json is located to install the dependencies.
-- The project includes a mocked backend using JSON Server, which can be started with npx json-server mock.json and accessed at http://localhost:3000/.
-- Finally, start the Angular project by running ng serve.
+- First, run the command `npm i` in the folder where the package.json is located to install the dependencies.
+- The project includes a mocked backend using JSON Server, which can be started with `npx json-server mock.json` and accessed at http://localhost:3000/.
+- Finally, start the Angular project by running `ng serve`.
 
 ## Documentation
 ### Summary
