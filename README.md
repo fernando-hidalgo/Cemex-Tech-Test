@@ -1,49 +1,43 @@
 # CEMEX Angular Tech Test
+## Initial Setup
+- First, run the command npm i in the folder where the package.json is located to install the dependencies.
+- The project includes a mocked backend using JSON Server, which can be started with npx json-server mock.json and accessed at http://localhost:3000/.
+- Finally, start the Angular project by running ng serve.
 
-## Configuración Inicial
+## Documentation
+### Summary
 
--   En primer lugar, se debe correr el comando `npm i` en la carpeta donde se localiza el package.json, para instalar las dependecias
--   El proyecto cuenta con un backend mockeado mediante JSON Server, se debe iniciar con `npx json-server mock.json`, ubicandose en [http://localhost:3000/](http://localhost:3000/)
--   Finalmente, se arranca el proyecto Angular mediante `ng serve`
-
-## Documentación
-
-### Resumen
-
-La prueba consiste en la creación de una tabla de gestión de pedidos, con la capadidad de listarlos y filtrarlos (Estado, Línea de Producción, Fecha Inicio/Fin y Nuúmero de Orden
-
+The test consists of creating an order management table, with the ability to list and filter orders (Status, Production Line, Start/End Date, and Order Number).
 ### Backend (Mock)
 
-Como se menciona previamente, el backend se ofrece mediante un archivo .json que hace las veces de BD. Mediante la librería `json-server`, se crea un backend mock con los endpoints mínimos para interactuar con dicha BD.
+As previously mentioned, the backend is provided through a .json file that acts as a database. Using the json-server library, a mock backend is created with the minimum endpoints to interact with this database.
+Models
 
-### Modelos
+To interact with the backend, a model has been created with the attributes specific to this database object:
 
-Para la interacción con el backend, se han creado 1 modelo, con los atributos propios de dicho objeto en BD
+- Order
 
--   Order
+### Components and Views
 
-### Componentes y Vistas
+Component management has been done by hosting a component called order-history in the main view of the project (app.component), which contains the complete logic and design of the table and filters.
 
-La gestión de los componentes se ha realizado alojando en la vista principal del proyecto (app.component) un componente llamado order-history, el cual cuenta con la lógica y diseño completo de la tabla y filtros
-
-El filtrado permite al usuario utilizar los filtros en cualquier orden, sumando entre ellos sus capacidades para obtener una búsqueda más concreta. En casos como el filtro de Product Line, las opciones sugeridas varían en función
-de las presentes en ese momento en la tabla
-
+Filtering allows the user to use the filters in any order, combining their capabilities to achieve a more precise search. For cases like the Product Line filter, the suggested options vary based on those currently present in the table.
 ### Services
 
-La interacción con el backend se ha realizado mediante la creación de un servicio por cada una de las vistas, con los endpoints necesarios para nutrir al frontend de los datos.
+Interaction with the backend has been handled by creating a service for each of the views, with the necessary endpoints to supply the frontend with data.
 
-Cada endpoint recurre a un archivo de constantes para conocer la ruta en cuestión, facilitando el mantenimiento del proyecto y la escalabilidad y, de la misma manera, al host en el que se encuentre el backend, dejándolo preparado para despegarlo en un futuro
+Each endpoint refers to a constants file to determine the specific route, facilitating project maintenance and scalability, and similarly, the host where the backend is located, preparing it for future deployment.
 
 ### CSS
-Para el estilado, se ha recurrido a SCSS (Sass: Syntactically Awesome Style Sheets), por las capacidades extra que aporta frente a CSS convencional, con el anidamiento de las clases.
 
-Para facilitar dicho anidamiento, se usa una nomenclatura padre-hijo para las clases, por ejemplo
+For styling, SCSS (Syntactically Awesome Style Sheets) has been used due to its additional capabilities compared to conventional CSS, such as class nesting.
 
--   div padre -> class="card"
--   div hijo -> class="card__content"
+To facilitate this nesting, a parent-child class naming convention is used, for example:
 
-El diseño en escritorio se muestra apegado a la vista móvil, siendo esta responsiva en múltiples dispositivos
+- Parent div -> class="card"
+- Child div -> class="card__content"
 
+The design for desktop closely follows the mobile view, making it responsive across multiple devices.
 ### Testing
-Para el testing, se ha utilizado la herramienta Karma Jasmine, opción por defecto de Agular, desarrollando tests para las nuevas vistas, componentes y servicios de interacción con el backend
+
+For testing, the Karma Jasmine tool, the default option in Angular, has been used, developing tests for the new views, components, and services interacting with the backend.
